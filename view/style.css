@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: linear-gradient(to right, rgba(15, 214, 79, 0.5), rgba(248, 239, 66, 0.5));
+    overflow: scroll!important;
+}
+
+main {
+    padding-top: 2rem;
+}
+
+.category-filter {
+    height: 2.875rem;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.main-title {
+    color: #fff;
+    text-shadow: 0 0 2px grey;
+    font-family: 'Dosis', sans-serif;
+}
+
+.btn-success {
+    border: #32cd32;
+    background-color: #32cd32;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+}
+
+.card {
+    min-height: 8.7rem;
+}
+
+.fa-star-of-life {
+    font-size: 11px;
+    color: #ff4500;
+}
