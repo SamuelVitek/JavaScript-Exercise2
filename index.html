@@ -15,8 +15,9 @@
         <!-- Upper part with button and select -->
         <div class="row justify-content-center">
             <button id="add" type="button" class="btn btn-success btn-lg mt-4 col-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add question</button>
-            <select class="col-2 mt-4 category-filter" aria-label="Default select example">
-                <option selected>Filter by category</option>
+            <label id="category-filter" for="filter" class="col-2 offset-1 form-label">Filter by categories:</label>
+            <select id="filter" class="col-2 mt-4 category-filter" aria-label="Default select example">
+                <option selected>None</option>
                 <option value="HTML">HTML</option>
                 <option value="CSS">CSS</option>
                 <option value="JS">JavaScript</option>

@@ -43,7 +43,13 @@ main {
     min-height: 8.7rem;
 }
 
-.fa-star-of-life {
-    font-size: 11px;
-    color: #ff4500;
+.column {
+    display: block;
+}
+
+#category-filter {
+    margin-top: 1.8rem;
+    color: #353839;
+    font-family: 'Dosis', sans-serif;
+    font-size: 24px;
 }

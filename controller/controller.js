@@ -7,6 +7,9 @@ const category = document.getElementById('category');
 const form = document.getElementById('form');
 const modal = document.getElementById('staticBackdrop');
 const row = document.getElementById('main-row');
+const filter = document.getElementById('filter');
+let cardTitles;
+
 let lastCol;
 let id = 1;
 
@@ -16,6 +19,10 @@ Array.from(close).forEach(btn => {
 form.addEventListener('submit', handleForm);
 addBtn.addEventListener('click', openModal);
 submit.addEventListener('click', saveRow);
+//filter.addEventListener('change', filterQuestions());
+filter.addEventListener('change', () => {
+    filterQuestions();
+});
 
 function saveRow() {
     if (question.value !== '') {
@@ -33,6 +40,7 @@ function saveRow() {
 function updateUI() {
     const col = document.createElement('div');
     col.classList.add('col-sm-3');
+    col.classList.add('column');
     col.id = 'col-' + id;
 
     const card = document.createElement('div');
@@ -63,6 +71,9 @@ function updateUI() {
     p.innerHTML = JSON.parse(localStorage.getItem(id.toString())).question;
 
     lastCol = document.getElementById('col-' + id);
+    cardTitles = document.getElementsByClassName('card-title');
+
+    filterQuestions();
 }
 
 function handleForm(event) { 
@@ -84,6 +95,20 @@ function openModal() {
     Array.from(overlay).forEach(box => {
         box.style.display = 'block';
     });
+}
+
+function filterQuestions() {
+    if (cardTitles !== undefined) {
+        Array.from(cardTitles).forEach(card => {
+            let wholeCards = card.parentElement.parentElement.parentElement.style;
+            console.log(wholeCards.display);
+            if (card.innerHTML === filter.value) {
+                wholeCards.display = 'none';
+            } else if (wholeCards.display === 'none') {
+                wholeCards.display = 'block';
+            }
+        });
+    }
 }
 
 window.onload = localStorage.clear();
