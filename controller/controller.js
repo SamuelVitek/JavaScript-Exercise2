@@ -19,7 +19,6 @@ Array.from(close).forEach(btn => {
 form.addEventListener('submit', handleForm);
 addBtn.addEventListener('click', openModal);
 submit.addEventListener('click', saveRow);
-//filter.addEventListener('change', filterQuestions());
 filter.addEventListener('change', () => {
     filterQuestions();
 });
