@@ -26,12 +26,6 @@ main {
     padding: 5px;
 }
 
-.main-title {
-    color: #fff;
-    text-shadow: 0 0 2px grey;
-    font-family: 'Dosis', sans-serif;
-}
-
 .btn-success {
     border: #32cd32;
     background-color: #32cd32;
