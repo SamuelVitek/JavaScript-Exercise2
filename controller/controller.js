@@ -7,6 +7,7 @@ const category = document.getElementById('category');
 const form = document.getElementById('form');
 const modal = document.getElementById('staticBackdrop');
 const row = document.getElementById('main-row');
+let lastCol;
 let id = 1;
 
 Array.from(close).forEach(btn => {
@@ -32,30 +33,36 @@ function saveRow() {
 function updateUI() {
     const col = document.createElement('div');
     col.classList.add('col-sm-3');
-    row.appendChild(col);
+    col.id = 'col-' + id;
 
     const card = document.createElement('div');
     card.classList.add('card');
     card.classList.add('mb-4');
-    col.appendChild(card);
 
     const cardBody = document.createElement('div');
     cardBody.classList.add('card-body');
-    card.appendChild(cardBody);
 
     const h5 = document.createElement('h5');
     h5.classList.add('card-title');
-    cardBody.appendChild(h5);
 
     const p = document.createElement('p');
     p.classList.add('card-text');
-    cardBody.appendChild(p);
 
-    console.log(JSON.parse(localStorage.getItem(id.toString())).category);
-    console.log(JSON.parse(localStorage.getItem(id.toString())).question);
+    if (id === 1) {
+        row.appendChild(col);
+    } else {
+        row.insertBefore(col, lastCol);
+    }
+
+    col.appendChild(card);
+    card.appendChild(cardBody);
+    cardBody.appendChild(h5);
+    cardBody.appendChild(p);
 
     h5.innerHTML = JSON.parse(localStorage.getItem(id.toString())).category;
     p.innerHTML = JSON.parse(localStorage.getItem(id.toString())).question;
+
+    lastCol = document.getElementById('col-' + id);
 }
 
 function handleForm(event) { 
