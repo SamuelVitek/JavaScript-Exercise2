@@ -100,10 +100,9 @@ function filterQuestions() {
     if (cardTitles !== undefined) {
         Array.from(cardTitles).forEach(card => {
             let wholeCards = card.parentElement.parentElement.parentElement.style;
-            console.log(wholeCards.display);
-            if (card.innerHTML === filter.value) {
+            if (filter.value !== 'NONE' && card.innerHTML !== filter.value) {
                 wholeCards.display = 'none';
-            } else if (wholeCards.display === 'none') {
+            } else if ((card.innerHTML === filter.value || filter.value === 'NONE') && wholeCards.display === 'none') {
                 wholeCards.display = 'block';
             }
         });
