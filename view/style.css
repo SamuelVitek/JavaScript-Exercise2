@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+/* Default settings */
 * {
     margin: 0;
     padding: 0;
@@ -13,13 +14,14 @@ body, html {
 
 body {
     background: linear-gradient(to right, rgba(15, 214, 79, 0.5), rgba(248, 239, 66, 0.5));
-    overflow: scroll!important;
+    overflow: scroll;
 }
 
 main {
     padding-top: 2rem;
 }
 
+/* Specific styles */
 .category-filter {
     height: 2.875rem;
     border-radius: 5px;
